@@ -5,6 +5,9 @@ When an `autoComplete` cell enters edit mode it will render a [jQuery Autocomple
 
 This cell was built as a replacement for the standard Backgrid `select-cell` which IMHO doesn't behave very well.
 
+## Installation
+`npm install --save backgrid-jquery-autocomplete-cell`
+
 ## Usage
 The Backgrid jQuery Autocomplete cell defines a new cell type `autoComplete`.
 
