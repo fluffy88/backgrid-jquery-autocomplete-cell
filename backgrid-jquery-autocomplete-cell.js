@@ -113,11 +113,11 @@
         editor: AutoCompleteCellEditor,
 
         autoCompleteOptions: function () {
-            return this.column.get("autoCompleteOptions") || [];
+            return _.result(this.column.attributes, "autoCompleteOptions", []);
         },
 
         enterEditMode: function () {
-            var options = _.result(this, "autoCompleteOptions");
+            var options = this.autoCompleteOptions();
             AutoCompleteCell.__super__.enterEditMode.apply(this, arguments);
 
             if (_.isArray(options)) {
@@ -136,7 +136,12 @@
         _handleDeferred: function (deferred) {
             var me = this;
             deferred.done(function (data, status, jqXHR) {
-                var options = (me.parse === undefined) ? data : me.parse(data);
+                var options = data;
+                if (me.parse) {
+                    options = me.parse(data);
+                } else if (me.column.get("parse")) {
+                    options = me.column.get("parse")(data);
+                }
                 me._setOptions(options);
             });
         },
