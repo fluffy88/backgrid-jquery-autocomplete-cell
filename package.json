@@ -1,6 +1,6 @@
 {
   "name": "backgrid-jquery-autocomplete-cell",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Backgrid extension that adds support for jQuery Autocomplete as a cell editor",
   "main": "backgrid-jquery-autocomplete-cell.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/fluffy88/backgrid-jquery-autocomplete-cell#readme",
   "dependencies": {
     "backgrid": "^0.3.7",
-    "jquery": "^3.1.1",
+    "jquery": ">=1.11.0",
     "jquery-ui-dist": "^1.12.1"
   }
 }
